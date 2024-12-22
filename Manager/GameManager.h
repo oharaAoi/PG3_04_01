@@ -19,7 +19,7 @@ private:
 
 	std::unique_ptr<IScene> sceneArray[3];
 
-	int currentSceneNo_;	// 今のScene
+	int currentSceneNo_ = SCENE::TITLE;	// 今のScene
 	int preSceneNo_;		// 前のscene
 
 };

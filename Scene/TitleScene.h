@@ -13,7 +13,7 @@ public:
 
 private:
 
-
+	int textureHandle_;
 
 };
 

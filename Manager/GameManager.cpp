@@ -10,6 +10,7 @@ GameManager::GameManager() {
 	sceneArray[CLEAR] = std::make_unique<ClearScene>();
 
 	IScene::SetSceneNo(TITLE);
+	sceneArray[currentSceneNo_]->Init();
 
 	input_ = InputManager::GetInstance();
 }
@@ -29,6 +30,7 @@ void GameManager::Run() {
 		///
 		/// ↓更新処理ここから
 		///
+		CheackNextScene();
 		sceneArray[currentSceneNo_]->Update();
 		///
 		/// ↑更新処理ここまで
@@ -53,7 +55,6 @@ void GameManager::Run() {
 }
 
 void GameManager::CheackNextScene() {
-	preSceneNo_ = currentSceneNo_;
 	preSceneNo_ = currentSceneNo_;
 	currentSceneNo_ = sceneArray[currentSceneNo_]->GetSceneNo();
 
